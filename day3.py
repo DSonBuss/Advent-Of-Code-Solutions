@@ -226,3 +226,28 @@ for line in input_list:
 total_joltage = sum(joltage_list)
 
 print(total_joltage)
+
+## PART 2
+
+joltage_list_2 = []
+
+for line in input_list:
+    max_index = 0
+    number = ""
+
+    for i in range(12):
+        max = line[max_index]
+        for index in range(max_index, len(line) - 11 + i):
+            num = line[index]
+            if num > max:
+                max_index = index
+                max = num
+        number += max
+        max_index += 1
+        
+
+    joltage_list_2.append(int(number))
+
+total_joltage_2 = sum(joltage_list_2)
+
+print(total_joltage_2)
